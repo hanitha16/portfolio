@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Select Level</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="bg-animation"></div>
+
+<div class="levels-container">
+
+<h1>Select Level</h1>
+
+<p class="subtitle">
+
+Complete one level to unlock the next.
+
+</p>
+
+<div class="level-grid">
+
+        <div class="level-card unlocked"
+         data-level="1">
+
+            <h2>Level 1</h2>
+
+            <button class="play-btn">
+                <img src="assets/images/play.png" class="icon">
+                        Play
+            </button>
+
+            <div class="stars">
+
+                ☆☆☆☆☆
+
+            </div>
+
+        </div>
+
+    <div class="level-card locked"
+     data-level="2">
+
+    <div class="lock">
+        <img src="assets/images/lock.png" class="icon-lock">
+    </div>
+
+    <h2>Level 2</h2>
+
+    <button class="play-btn" disabled>
+
+        Locked
+
+    </button>
+
+    <div class="stars">
+
+    ☆☆☆☆☆
+
+    </div>
+
+    </div>
+
+
+    <div class="level-card locked"
+     data-level="3">
+
+    <div class="lock">
+        <img src="assets/images/lock.png" class="icon-lock">
+    </div>
+    <h2>Level 3</h2>
+
+    <button class="play-btn" disabled>
+
+        Locked
+
+    </button>
+
+    <div class="stars">
+
+    ☆☆☆☆☆
+
+    </div>
+
+    </div>
+
+    <d class="level-card locked"
+     data-level="4">
+
+    <div class="lock">
+    <img src="assets/images/lock.png" class="icon-lock">
+    </div>
+
+    <h2>Level 4</h2>
+
+    <button class="play-btn" disabled>
+
+        Locked
+
+    </button>
+
+    <div class="stars">
+
+    ☆☆☆☆☆
+
+    </div>
+
+    </d iv>
+
+    <div class="level-card locked"
+     data-level="5">
+
+    <div class="lock">
+    <img src="assets/images/lock.png" class="icon-lock">
+    </div>
+
+    <h2>Level 5</h2>
+
+    <button class="play-btn" disabled>
+
+        Locked
+
+    </button>
+
+    <div class="stars">
+
+    ☆☆☆☆☆
+
+    </div>
+
+    </div>
+
+</div>
+
+<button id="resetBtn">
+        Reset Progress
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

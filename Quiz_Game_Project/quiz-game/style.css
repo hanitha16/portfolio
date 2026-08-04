@@ -1,0 +1,798 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Outfit',sans-serif;
+    background:#0f172a;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#fff;
+}
+
+
+.bg-animation{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+
+    background:linear-gradient(
+        -45deg,
+        #0f172a,
+        #312e81,
+        #2563eb,
+        #ec4899,
+        #0f172a
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ==========================
+   GLASS CARD
+========================== */
+
+.glass-card{
+
+    width:430px;
+    max-width:90%;
+
+    padding:45px;
+
+    text-align:center;
+
+    background:rgba(15,23,42,.82);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+
+}
+
+/* ==========================
+   WELCOME PAGE
+========================== */
+
+.welcome-container{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.glass-card h1{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+.glass-card p{
+
+    font-size:18px;
+
+    color:#dbeafe;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #2563eb
+    );
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 25px rgba(37,99,235,.45);
+
+}
+
+/* ==========================
+   LEVEL PAGE
+========================== */
+
+.levels-container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:60px 0;
+
+    text-align:center;
+
+}
+
+.levels-container h1{
+
+    font-size:48px;
+
+}
+
+.subtitle{
+
+    color:#d1d5db;
+
+    margin:15px 0 40px;
+
+}
+
+.level-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:25px;
+
+}
+
+/* ==========================
+   LEVEL CARD
+========================== */
+
+.level-card{
+
+    background:rgba(15,23,42,.82);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    transition:.35s;
+
+}
+
+.level-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.45);
+
+}
+
+.level-card h2{
+
+    margin:15px 0;
+
+}
+
+.lock{
+
+    font-size:45px;
+
+}
+
+.play-btn{
+
+    margin:20px 0;
+
+}
+
+.play-btn:disabled{
+
+    background:#475569;
+
+    cursor:not-allowed;
+
+}
+
+.stars{
+
+    font-size:28px;
+
+    color:#FFD700;
+
+    letter-spacing:4px;
+
+    margin-top:20px;
+
+}
+
+.locked{
+
+    opacity:.65;
+
+}
+
+/* ==========================
+   QUIZ PAGE
+========================== */
+
+.quiz-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.quiz-card{
+
+    width:760px;
+
+    max-width:95%;
+
+    background:rgba(15,23,42,.82);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    padding:40px;
+
+}
+
+/* Progress */
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:25px 0;
+
+}
+
+.progress-fill{
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #8b5cf6,
+        #2563eb
+    );
+
+    transition:.4s;
+
+}
+
+/* Question */
+
+#question{
+
+    background:white;
+
+    color:#0f172a;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    font-size:24px;
+
+    font-weight:600;
+
+    margin:30px 0;
+
+}
+
+/* Answers */
+
+#answers{
+
+    display:grid;
+
+    gap:15px;
+
+}
+
+.answer{
+
+    background:white;
+
+    color:#0f172a;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:16px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.answer:hover{
+
+    transform:translateY(-3px);
+
+    background:#dbeafe;
+
+}
+
+/* Status */
+
+.status{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:30px 0;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   RESULT PAGE
+========================== */
+
+.result-card{
+
+    width:450px;
+
+    max-width:90%;
+
+    margin:80px auto;
+
+    text-align:center;
+
+    padding:40px;
+
+    background:rgba(15,23,42,.82);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+#star-rating{
+
+    font-size:42px;
+
+    color:#FFD700;
+
+    margin:25px 0;
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.glass-card{
+
+padding:35px;
+
+}
+
+.glass-card h1{
+
+font-size:40px;
+
+}
+
+.level-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.quiz-card{
+
+padding:25px;
+
+}
+
+#question{
+
+font-size:20px;
+
+}
+
+.status{
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+}
+
+
+#nextBtn{
+
+    margin-top:30px;
+
+    display:none;
+
+}
+
+.answer:disabled{
+
+    cursor:not-allowed;
+
+}
+
+
+/* ==========================
+RESULT PAGE
+========================== */
+
+.result-card{
+
+    width:450px;
+
+    max-width:90%;
+
+    background:rgba(15,23,42,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+.result-card h1{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+.result-card h2{
+
+    margin-bottom:25px;
+
+}
+
+.result-card p{
+
+    margin:10px 0;
+
+    font-size:18px;
+
+}
+
+#star-rating{
+
+    font-size:45px;
+
+    color:#FFD700;
+
+    margin:25px 0;
+
+    letter-spacing:5px;
+
+}
+
+#resetBtn{
+
+width:260px;
+
+margin-top:40px;
+
+}
+
+.timer{
+
+display:flex;
+
+justify-content:flex-end;
+
+font-size:18px;
+
+font-weight:600;
+
+margin-bottom:15px;
+
+color:#FFD700;
+
+}
+
+.lives{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+}
+
+body::before,
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:250px;
+
+height:250px;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+opacity:.25;
+
+animation:float 12s infinite alternate;
+
+}
+
+body::before{
+
+background:#7C3AED;
+
+top:-80px;
+
+left:-60px;
+
+}
+
+body::after{
+
+background:#2563EB;
+
+bottom:-80px;
+
+right:-60px;
+
+}
+
+@keyframes float{
+
+to{
+
+transform:
+
+translateY(80px)
+
+translateX(60px);
+
+}
+
+}
+
+button{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+button::after{
+
+content:"";
+
+position:absolute;
+
+width:30px;
+
+height:250%;
+
+background:rgba(255,255,255,.3);
+
+top:-50%;
+
+left:-120%;
+
+transform:rotate(25deg);
+
+transition:.8s;
+
+}
+
+button:hover::after{
+
+left:130%;
+
+}
+
+.result-card h1{
+
+animation:bounce 1.2s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+#star-rating{
+
+animation:glow 2s infinite;
+
+}
+
+@keyframes glow{
+
+50%{
+
+transform:scale(1.12);
+
+text-shadow:
+
+0 0 20px gold,
+
+0 0 40px gold;
+
+}
+
+}
+
+.level-card:hover{
+
+transform:
+
+translateY(-10px)
+
+scale(1.03);
+
+}
+
+@media(max-width:768px){
+
+.quiz-card{
+
+padding:25px;
+
+}
+
+.result-card{
+
+width:95%;
+
+}
+
+.glass-card{
+
+width:92%;
+
+}
+
+}
+
+.logo{
+    height:200px;
+    width:300px;
+    margin-bottom:20px;
+}
+
+.trophy{
+    width:120px;
+    margin-bottom:20px;
+}
+
+.icon{
+    width:20px;
+    height:20px;
+    margin-right:8px;
+    vertical-align:middle;
+}
+
+.icon-lock{
+    width:40px;
+    margin-bottom:15px;
+}
